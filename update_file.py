@@ -23,4 +23,4 @@ else:
     json_data["version"] = version
 
 with open(os.getenv("FILE"), "w") as updated_json_file: 
-    json.dump(json_data, updated_json_file, indent=2)
+    json.dump(json_data, updated_json_file, indent=4)
