@@ -7,7 +7,7 @@ read_only = os.getenv("READ_ONLY")
 notes = "# Notes\n"
 new_data = json.loads(data)
 
-sections = data["sections"]
+sections = new_data["sections"]
 assert type(sections) == list
 
 for section in sections:
@@ -15,9 +15,9 @@ for section in sections:
     assert type(section["notes"]) == list
     notes += f'\n## {section["title"]}\n'
     for note in section["notes"]:
-        assert section["type"] == str
-        assert section["message"] == str
-        notes += f'- {section["message"]}\n'
+        assert type(note["type"]) == str
+        assert type(note["message"]) == str
+        notes += f'- {note["message"]}\n'
         
 notes += "\n"
 
